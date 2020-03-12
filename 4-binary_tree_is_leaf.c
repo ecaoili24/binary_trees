@@ -3,11 +3,12 @@
 /**
  * binary_tree_is_leaf - checks if a node is a leaf
  * @node: node to check
+ *
  * Return: 1 or 0 for yes or no
  */
 int binary_tree_is_leaf(const binary_tree_t *node)
 {
-	if (!node->right && !node->left)
+	if (node && !node->right && !node->left)
 		return (1);
 	else
 		return (0);
