@@ -15,19 +15,20 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	if (first == NULL || second == NULL)
 		return (NULL);
 
-	depthONE = binary_tree_depth(first);
-	depthTWO = binary_tree_depth(second);
+	depthONE = binary_tree_depth((binary_tree_t *)first);
+	depthTWO = binary_tree_depth((binary_tree_t *)second);
 
-	if (depthONE > depthTWO)
+	while (depthONE > depthTWO)
 	{
 		first = first->parent;
 		depthONE--;
 	}
-	if (depthTWO > depthONE)
+	while (depthTWO > depthONE)
 	{
 		second = second->parent;
 		depthTWO--;
 	}
+
 	while (first && second)
 	{
 		if (first == second)
@@ -35,8 +36,7 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 		first = first->parent;
 		second = second->parent;
 	}
-
-	return ((binary_tree_t *)first);
+	return (NULL);
 }
 
 /**
