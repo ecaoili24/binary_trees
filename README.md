@@ -1,3 +1,7 @@
+<p align="center">
+<img src="https://i.ibb.co/nMtRXQR/Holberton.png">
+</p>
+
 # 0x1D. C - Binary Trees
 
 ## Learning Objectives
